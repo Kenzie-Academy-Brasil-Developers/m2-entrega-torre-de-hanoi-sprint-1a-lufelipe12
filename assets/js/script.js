@@ -42,15 +42,22 @@ table.appendChild(towerThree);
 
 
 ////// ADD FUNCTIONS AND FUNCTIONALITY FOR ELEMENTS /////
+const resetDiv = document.getElementById('resetDiv')
 const resetButton = document.createElement('button')
 resetButton.id = 'reset'
 resetButton.innerText = 'Reset'
+
+let dificultyLevel = 0
 
 const easyLevel = () => {
     towerOne.appendChild(discRed)
     towerOne.appendChild(discGreen)
     towerOne.appendChild(discBlue)
-    table.appendChild(resetButton)
+    resetDiv.appendChild(resetButton)
+    dificultyLevel = 1
+    easyButton.style.display = 'none'
+    mediumButton.style.display = 'none'
+    hardButton.style.display = 'none'
 }
 
 const mediumLevel = () => {
@@ -58,8 +65,11 @@ const mediumLevel = () => {
     towerOne.appendChild(discGreen)
     towerOne.appendChild(discBlue)
     towerOne.appendChild(discYellow)
-    table.appendChild(resetButton)
-
+    resetDiv.appendChild(resetButton)
+    dificultyLevel = 2
+    easyButton.style.display = 'none'
+    mediumButton.style.display = 'none'
+    hardButton.style.display = 'none'
 }
 
 const hardLevel = () => {
@@ -68,8 +78,11 @@ const hardLevel = () => {
     towerOne.appendChild(discBlue)
     towerOne.appendChild(discYellow)
     towerOne.appendChild(discOrange)
-    table.appendChild(resetButton)
-
+    resetDiv.appendChild(resetButton)
+    dificultyLevel = 3
+    easyButton.style.display = 'none'
+    mediumButton.style.display = 'none'
+    hardButton.style.display = 'none'
 }
 
 
@@ -81,7 +94,15 @@ easyButton.addEventListener('click', easyLevel)
 mediumButton.addEventListener('click', mediumLevel)
 hardButton.addEventListener('click', hardLevel)
 
+function resetGame(){
+    easyButton.style.display = 'inline'
+    mediumButton.style.display = 'inline'
+    hardButton.style.display = 'inline'
+    towerOne.innerHTML = ''
+    towerTwo.innerHTML = ''
+    towerThree.innerHTML = ''
+    resetDiv.innerHTML = ''
+}
 
-
-
+resetButton.addEventListener('click',resetGame)
 
