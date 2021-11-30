@@ -88,7 +88,6 @@ const hardLevel = () => {
     
 }
 
-
 const easyButton = document.getElementById('easy')
 const mediumButton = document.getElementById('medium')
 const hardButton = document.getElementById('hard')
@@ -125,8 +124,11 @@ towerOne.addEventListener('click', () =>{
     clickMarker()
     if(whatClick === 'second' && towerOne.childElementCount > 0){
         console.log('Executa primeira função')
+        saveDiscoAux(towerOne);
+        removeDisc(towerOne);
     }else if(whatClick === 'first'){
         console.log('Executa segunda função')
+        addDisc(towerOne);
     }else{
         console.log('Nada é executado')
     }
@@ -136,8 +138,11 @@ towerTwo.addEventListener('click', () =>{
     clickMarker()
     if(whatClick === 'second' && towerTwo.childElementCount > 0){
         console.log('Executa primeira função')
+        saveDiscoAux(towerTwo);
+        removeDisc(towerTwo);
     }else if(whatClick === 'first'){
         console.log('Executa segunda função')
+        addDisc(towerTwo);
     }else{
         console.log('Nada é executado')
     }
@@ -147,9 +152,35 @@ towerThree.addEventListener('click', () =>{
     clickMarker()
     if(whatClick === 'second' && towerThree.childElementCount > 0){
         console.log('Executa primeira função')
+        saveDiscoAux(towerThree);
+        removeDisc(towerThree);
     }else if(whatClick === 'first'){
         console.log('Executa segunda função')
+        addDisc(towerThree);
     }else{
         console.log('Nada é executado')
     }
 })
+
+// REMOVER DISCO
+
+// REMOVER DISCO
+// 1. Clicar na torre
+// 2. Clicar no disco
+
+// ADICIONAR DISCO
+// 3. Clicar na torre que vai receber o disco
+
+let discoAux 
+
+const removeDisc = (evt) => {
+    evt.lastElementChild.remove();
+}
+
+const saveDiscoAux = (evt) => {
+    discoAux = evt.lastElementChild;
+}
+
+const addDisc = (evt) => {
+    evt.appendChild(discoAux);
+}
