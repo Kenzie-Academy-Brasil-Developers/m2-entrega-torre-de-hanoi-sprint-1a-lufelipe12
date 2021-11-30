@@ -6,4 +6,3 @@
 
 // Nenhum disco pode ser colocado no topo de um disco menor.
 // => CONDIÇÂO PARA COMPARAR DISCO MAIOR E MENOR, MAIOR NÂO PODE FICAR EM CIMA DO MENOR.
-
