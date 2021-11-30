@@ -1,4 +1,6 @@
 const table = document.getElementById('main')
+const countingMoves = document.getElementById('counter')
+
 
 const towerOne = document.createElement('section')
 towerOne.className = "tower"
@@ -87,10 +89,12 @@ function resetGame() {
     dificultyLevel = 0
     whatClick = 'first'
     discWidth = 0
+    counter = 0
+    countingMoves.innerText = 0
 }
 
 resetButton.addEventListener('click', resetGame)
-
+let counter = 0
 let whatClick = 'first'
 
 const clickMarker = () => {
@@ -109,6 +113,8 @@ towerOne.addEventListener('click', () => {
     } else if ((whatClick === 'second' && towerOne.childElementCount === 0) || (whatClick === 'second' && sizeOfChilds(towerOne) === true)) {
         clickMarker()
         addDisc(towerOne)
+        counter++
+        countingMoves.innerText = counter
     }
 })
 
@@ -120,6 +126,8 @@ towerTwo.addEventListener('click', () => {
     } else if ((whatClick === 'second' && towerTwo.childElementCount === 0) || (whatClick === 'second' && sizeOfChilds(towerTwo) === true)) {
         clickMarker()
         addDisc(towerTwo)
+        counter++
+        countingMoves.innerText = counter
         isWin(towerTwo)
     }
 })
@@ -132,6 +140,8 @@ towerThree.addEventListener('click', () => {
     } else if ((whatClick === 'second' && towerThree.childElementCount === 0) || (whatClick === 'second' && sizeOfChilds(towerThree) === true)) {
         clickMarker()
         addDisc(towerThree)
+        counter++
+        countingMoves.innerText = counter
         isWin(towerThree)
     }
 })
@@ -164,6 +174,7 @@ const isWin = (towerNumber) => {
     if (towerNumber.childElementCount === dificultyLevel) {
         setTimeout(function () {
             alert("Você venceu")
+            resetGame()
         }, 800)
     }
 }
