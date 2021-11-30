@@ -7,8 +7,8 @@
 // Nenhum disco pode ser colocado no topo de um disco menor.
 // => CONDIÇÂO PARA COMPARAR DISCO MAIOR E MENOR, MAIOR NÂO PODE FICAR EM CIMA DO MENOR.
 
-// SECTION
-const main = document.getElementById('main');
+// TABLE
+const table = document.getElementById('main');
 
 // TORRE
 const towerOne = document.createElement('section');
@@ -19,16 +19,20 @@ const towerThree = document.createElement('section');
 towerThree.className = "tower";
 
 // DISCOS
-const discRed = document.createElement('div'); // DISCO 1 - RED
+const discRed = document.createElement('div'); // DISCO 1 - Red
 discRed.className = "discRed";
-const discGreen = document.createElement('div'); // DISCO 2 - YELLOW
+const discGreen = document.createElement('div'); // DISCO 2 - Green
 discGreen.className = "discGreen";
-const discBlue = document.createElement('div'); // DISCO 3 - BLUE
+const discBlue = document.createElement('div'); // DISCO 3 - Blue
 discBlue.className = "discBlue";
+const discYellow = document.createElement('div'); // DISCO 4 - Yellow
+discYellow.className = "discYellow";
+const discOrange = document.createElement('div'); // DISCO 5 - Orange
+discOrange.className = "discOrange";
 
 // ADD TOWERS INTO MAIN
-main.appendChild(towerOne);
-main.appendChild(towerTwo);
-main.appendChild(towerThree);
+table.appendChild(towerOne);
+table.appendChild(towerTwo);
+table.appendChild(towerThree);
 
 // ADD DISCS INTO TOWERS
