@@ -165,14 +165,7 @@ towerThree.addEventListener('click', () => {
     }
 })
 
-// REMOVER DISCO
-
-// REMOVER DISCO
-// 1. Clicar na torre
-// 2. Clicar no disco
-
-// ADICIONAR DISCO
-// 3. Clicar na torre que vai receber o disco
+// ADD AND REMOVE DISCS
 
 let discoAux 
 
