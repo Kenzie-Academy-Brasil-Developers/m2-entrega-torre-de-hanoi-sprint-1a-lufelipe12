@@ -54,10 +54,11 @@ const easyLevel = () => {
     towerOne.appendChild(discGreen)
     towerOne.appendChild(discRed)
     resetDiv.appendChild(resetButton)
-    dificultyLevel = 1
+    dificultyLevel = 3
     easyButton.style.display = 'none'
     mediumButton.style.display = 'none'
     hardButton.style.display = 'none'
+    
 }
 
 const mediumLevel = () => {
@@ -66,10 +67,11 @@ const mediumLevel = () => {
     towerOne.appendChild(discGreen)
     towerOne.appendChild(discRed)
     resetDiv.appendChild(resetButton)
-    dificultyLevel = 2
+    dificultyLevel = 4
     easyButton.style.display = 'none'
     mediumButton.style.display = 'none'
     hardButton.style.display = 'none'
+    
 }
 
 const hardLevel = () => {
@@ -79,10 +81,11 @@ const hardLevel = () => {
     towerOne.appendChild(discGreen)
     towerOne.appendChild(discRed)
     resetDiv.appendChild(resetButton)
-    dificultyLevel = 3
+    dificultyLevel = 5
     easyButton.style.display = 'none'
     mediumButton.style.display = 'none'
     hardButton.style.display = 'none'
+    
 }
 
 
@@ -106,3 +109,47 @@ function resetGame() {
 
 resetButton.addEventListener('click', resetGame)
 
+let whatClick = 'first'
+
+const clickMarker = () => {
+    if(whatClick === 'first'){
+        console.log('Primeiro click')
+        whatClick = 'second'
+    }else{
+        console.log('Segundo click')
+        whatClick = 'first'
+    }
+}
+
+towerOne.addEventListener('click', () =>{
+    clickMarker()
+    if(whatClick === 'second' && towerOne.childElementCount > 0){
+        console.log('Executa primeira função')
+    }else if(whatClick === 'first'){
+        console.log('Executa segunda função')
+    }else{
+        console.log('Nada é executado')
+    }
+})
+
+towerTwo.addEventListener('click', () =>{
+    clickMarker()
+    if(whatClick === 'second' && towerTwo.childElementCount > 0){
+        console.log('Executa primeira função')
+    }else if(whatClick === 'first'){
+        console.log('Executa segunda função')
+    }else{
+        console.log('Nada é executado')
+    }
+})
+
+towerThree.addEventListener('click', () =>{
+    clickMarker()
+    if(whatClick === 'second' && towerThree.childElementCount > 0){
+        console.log('Executa primeira função')
+    }else if(whatClick === 'first'){
+        console.log('Executa segunda função')
+    }else{
+        console.log('Nada é executado')
+    }
+})
