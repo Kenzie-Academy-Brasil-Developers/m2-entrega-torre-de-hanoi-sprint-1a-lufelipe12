@@ -5,10 +5,49 @@
     align-items: center;
 }
 
-.header, .footer{
+.header, .footer {
     height: 10vw;
 }
 
-.main{
+.main {
     height: 80vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tower{
+    width: 50px;
+    background-color: black;
+    height: 400px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.discRed{
+    width: 100px;
+    height: 50px;
+    background-color: red;
+}
+.discGreen{
+    width: 125px;
+    height: 50px;
+    background-color: green;
+}
+.discBlue{
+    width: 150px;
+    height: 50px;
+    background-color: blue;
+}
+.discYellow{
+    width: 175px;
+    height: 50px;
+    background-color: yellow;
+}
+.discOrange{
+    width: 200px;
+    height: 50px;
+    background-color: orangered;
 }
