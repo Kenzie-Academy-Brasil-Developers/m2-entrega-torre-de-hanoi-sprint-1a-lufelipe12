@@ -83,7 +83,6 @@ const hardLevel = () => {
 
 }
 
-
 const easyButton = document.getElementById('easy')
 const mediumButton = document.getElementById('medium')
 const hardButton = document.getElementById('hard')
@@ -123,11 +122,14 @@ towerOne.addEventListener('click', () => {
     if (whatClick === 'first' && towerOne.childElementCount > 0) {
         console.log('Executa primeira função')
         clickMarker()
-    } else if (whatClick === 'second') {
+        saveDiscoAux(towerOne);
+        removeDisc(towerOne);
+    }else if(whatClick === 'second'){
         console.log('Executa segunda função')
         clickMarker()
-    } else {
-        alert('Tente outra jogada')
+        addDisc(towerOne);
+    }else{
+        console.log('Nada é executado')
     }
 })
 
@@ -136,11 +138,14 @@ towerTwo.addEventListener('click', () => {
     if (whatClick === 'first' && towerTwo.childElementCount > 0) {
         clickMarker()
         console.log('Executa primeira função')
-    } else if (whatClick === 'second') {
-        clickMarker()
+        saveDiscoAux(towerTwo);
+        removeDisc(towerTwo);
+    }else if(whatClick === 'second'){
         console.log('Executa segunda função')
-    } else {
-        alert('Tente outra jogada')
+        clickMarker()
+        addDisc(towerTwo);
+    }else{
+        console.log('Nada é executado')
     }
 })
 
@@ -149,30 +154,36 @@ towerThree.addEventListener('click', () => {
     if (whatClick === 'first' && towerThree.childElementCount > 0) {
         clickMarker()
         console.log('Executa primeira função')
-    } else if (whatClick === 'second') {
-        clickMarker()
+        saveDiscoAux(towerThree);
+        removeDisc(towerThree);
+    }else if(whatClick === 'second'){
         console.log('Executa segunda função')
-    } else {
-        alert('Tente outra jogada')
+        clickMarker()
+        addDisc(towerThree);
+    }else{
+        console.log('Nada é executado')
     }
 })
 
+// REMOVER DISCO
 
-function checkSize(discSize) {
-    let size = discSize.lastElementChild.clientWidth
-    return size
+// REMOVER DISCO
+// 1. Clicar na torre
+// 2. Clicar no disco
+
+// ADICIONAR DISCO
+// 3. Clicar na torre que vai receber o disco
+
+let discoAux 
+
+const removeDisc = (evt) => {
+    evt.lastElementChild.remove();
 }
 
-
-function isBigger() {
-
+const saveDiscoAux = (evt) => {
+    discoAux = evt.lastElementChild;
 }
 
-function checkWinCondition(howManyDiscs) {
-    let totalDiscs = howManyDiscs.childElementCount
-    return totalDiscs
-}
-
-function isWin(howManyDiscs) {
-    return dificultyLevel === checkWinCondition(howManyDiscs)
+const addDisc = (evt) => {
+    evt.appendChild(discoAux);
 }
