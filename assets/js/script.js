@@ -35,11 +35,6 @@ table.appendChild(towerOne);
 table.appendChild(towerTwo);
 table.appendChild(towerThree);
 
-// ADD DISCS INTO TOWERS
-
-
-
-
 
 ////// ADD FUNCTIONS AND FUNCTIONALITY FOR ELEMENTS /////
 const resetDiv = document.getElementById('resetDiv')
@@ -58,7 +53,7 @@ const easyLevel = () => {
     easyButton.style.display = 'none'
     mediumButton.style.display = 'none'
     hardButton.style.display = 'none'
-    
+
 }
 
 const mediumLevel = () => {
@@ -71,7 +66,7 @@ const mediumLevel = () => {
     easyButton.style.display = 'none'
     mediumButton.style.display = 'none'
     hardButton.style.display = 'none'
-    
+
 }
 
 const hardLevel = () => {
@@ -85,7 +80,7 @@ const hardLevel = () => {
     easyButton.style.display = 'none'
     mediumButton.style.display = 'none'
     hardButton.style.display = 'none'
-    
+
 }
 
 
@@ -105,6 +100,8 @@ function resetGame() {
     towerTwo.innerHTML = ''
     towerThree.innerHTML = ''
     resetDiv.innerHTML = ''
+    dificultyLevel = 0
+    whatClick = 'first'
 }
 
 resetButton.addEventListener('click', resetGame)
@@ -112,44 +109,70 @@ resetButton.addEventListener('click', resetGame)
 let whatClick = 'first'
 
 const clickMarker = () => {
-    if(whatClick === 'first'){
+    if (whatClick === 'first') {
         console.log('Primeiro click')
         whatClick = 'second'
-    }else{
+    } else {
         console.log('Segundo click')
         whatClick = 'first'
     }
 }
 
-towerOne.addEventListener('click', () =>{
-    clickMarker()
-    if(whatClick === 'second' && towerOne.childElementCount > 0){
+towerOne.addEventListener('click', () => {
+
+    if (whatClick === 'first' && towerOne.childElementCount > 0) {
         console.log('Executa primeira função')
-    }else if(whatClick === 'first'){
+        clickMarker()
+    } else if (whatClick === 'second') {
         console.log('Executa segunda função')
-    }else{
-        console.log('Nada é executado')
+        clickMarker()
+    } else {
+        alert('Tente outra jogada')
     }
 })
 
-towerTwo.addEventListener('click', () =>{
-    clickMarker()
-    if(whatClick === 'second' && towerTwo.childElementCount > 0){
+towerTwo.addEventListener('click', () => {
+
+    if (whatClick === 'first' && towerTwo.childElementCount > 0) {
+        clickMarker()
         console.log('Executa primeira função')
-    }else if(whatClick === 'first'){
+    } else if (whatClick === 'second') {
+        clickMarker()
         console.log('Executa segunda função')
-    }else{
-        console.log('Nada é executado')
+    } else {
+        alert('Tente outra jogada')
     }
 })
 
-towerThree.addEventListener('click', () =>{
-    clickMarker()
-    if(whatClick === 'second' && towerThree.childElementCount > 0){
+towerThree.addEventListener('click', () => {
+
+    if (whatClick === 'first' && towerThree.childElementCount > 0) {
+        clickMarker()
         console.log('Executa primeira função')
-    }else if(whatClick === 'first'){
+    } else if (whatClick === 'second') {
+        clickMarker()
         console.log('Executa segunda função')
-    }else{
-        console.log('Nada é executado')
+    } else {
+        alert('Tente outra jogada')
     }
 })
+
+
+function checkSize(discSize) {
+    let size = discSize.lastElementChild.clientWidth
+    return size
+}
+
+
+function isBigger() {
+
+}
+
+function checkWinCondition(howManyDiscs) {
+    let totalDiscs = howManyDiscs.childElementCount
+    return totalDiscs
+}
+
+function isWin(howManyDiscs) {
+    return dificultyLevel === checkWinCondition(howManyDiscs)
+}
