@@ -50,9 +50,9 @@ resetButton.innerText = 'Reset'
 let dificultyLevel = 0
 
 const easyLevel = () => {
-    towerOne.appendChild(discRed)
-    towerOne.appendChild(discGreen)
     towerOne.appendChild(discBlue)
+    towerOne.appendChild(discGreen)
+    towerOne.appendChild(discRed)
     resetDiv.appendChild(resetButton)
     dificultyLevel = 1
     easyButton.style.display = 'none'
@@ -61,10 +61,10 @@ const easyLevel = () => {
 }
 
 const mediumLevel = () => {
-    towerOne.appendChild(discRed)
-    towerOne.appendChild(discGreen)
-    towerOne.appendChild(discBlue)
     towerOne.appendChild(discYellow)
+    towerOne.appendChild(discBlue)
+    towerOne.appendChild(discGreen)
+    towerOne.appendChild(discRed)
     resetDiv.appendChild(resetButton)
     dificultyLevel = 2
     easyButton.style.display = 'none'
@@ -73,11 +73,11 @@ const mediumLevel = () => {
 }
 
 const hardLevel = () => {
-    towerOne.appendChild(discRed)
-    towerOne.appendChild(discGreen)
-    towerOne.appendChild(discBlue)
-    towerOne.appendChild(discYellow)
     towerOne.appendChild(discOrange)
+    towerOne.appendChild(discYellow)
+    towerOne.appendChild(discBlue)
+    towerOne.appendChild(discGreen)
+    towerOne.appendChild(discRed)
     resetDiv.appendChild(resetButton)
     dificultyLevel = 3
     easyButton.style.display = 'none'
@@ -94,7 +94,7 @@ easyButton.addEventListener('click', easyLevel)
 mediumButton.addEventListener('click', mediumLevel)
 hardButton.addEventListener('click', hardLevel)
 
-function resetGame(){
+function resetGame() {
     easyButton.style.display = 'inline'
     mediumButton.style.display = 'inline'
     hardButton.style.display = 'inline'
@@ -104,5 +104,5 @@ function resetGame(){
     resetDiv.innerHTML = ''
 }
 
-resetButton.addEventListener('click',resetGame)
+resetButton.addEventListener('click', resetGame)
 
