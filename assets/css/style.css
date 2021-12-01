@@ -1,0 +1,160 @@
+:root {
+    --fontfamily-website: 'M PLUS 1', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/bg.png');
+    background-size: cover;
+    font-family: var(--fontfamily-website);
+}
+
+#resetDiv {
+    height: 10vh;
+}
+
+#resetDiv button {
+    font-family: var(--fontfamily-website);
+    font-weight: bold;
+    background-color: yellow;
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+.header, .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 20vh;
+}
+
+.header h1, .footer h3 {
+    font-weight: bolder;
+    text-align: center;
+    line-height: 1.6;
+    padding: 0 50px;
+}
+
+.header button {
+    width: 60px;
+    height: 30px;
+    font-weight: bold;
+    font-family: var(--fontfamily-website);
+    border-radius: 15px;
+}
+
+.easy {
+    background-color: lightgreen;
+}
+
+.medium {
+    background-color: lightyellow;
+}
+
+.hard {
+    background-color: salmon;
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 60vh;
+}
+
+.footer {
+    height: 10vh;
+}
+
+.tower {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    background-image: url("../img/tower.png");
+    background-size: cover;
+    width: 100px;
+    height: 130px;
+    border-radius: 15px 15px 0 0;
+}
+
+.disc {
+    height: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.discRed {
+    width: 30px;
+    background-color: red;
+}
+
+.discGreen {
+    width: 40px;
+    background-color: green;
+}
+
+.discBlue {
+    width: 60px;
+    background-color: blue;
+}
+
+.discYellow {
+    width: 80px;
+    background-color: yellow;
+}
+
+.discOrange {
+    width: 100px;
+    background-color: orangered;
+}
+
+
+@media (min-width: 1024px) {
+    .header h1, .footer h3 {
+        font-size: 24px;
+    }
+
+    .header button {
+        font-size: 18px;
+        width: 80px;
+    }
+
+    p, span {
+        font-size: 20px;
+    }
+
+    .tower {
+        width: 170px;
+        height: 250px;
+    }
+
+    .discRed{
+        width: 60px;
+    }
+
+    .discGreen{
+        width: 80px;
+    }
+
+    .discBlue{
+        width: 100px;
+    }
+
+    .discYellow{
+        width: 120px;
+    }
+
+    .discOrange{
+        width: 140px;
+    }
+
+    #resetDiv button{
+        font-size: 16px;
+    }
+}
