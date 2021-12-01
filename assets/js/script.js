@@ -10,15 +10,15 @@ const towerThree = document.createElement('section')
 towerThree.className = "tower"
 
 const discRed = document.createElement('div')
-discRed.className = "discRed"
+discRed.className = "disc discRed"
 const discGreen = document.createElement('div')
-discGreen.className = "discGreen"
+discGreen.className = "disc discGreen"
 const discBlue = document.createElement('div')
-discBlue.className = "discBlue"
+discBlue.className = "disc discBlue"
 const discYellow = document.createElement('div')
-discYellow.className = "discYellow"
+discYellow.className = "disc discYellow"
 const discOrange = document.createElement('div')
-discOrange.className = "discOrange"
+discOrange.className = "disc discOrange"
 
 table.appendChild(towerOne)
 table.appendChild(towerTwo)
