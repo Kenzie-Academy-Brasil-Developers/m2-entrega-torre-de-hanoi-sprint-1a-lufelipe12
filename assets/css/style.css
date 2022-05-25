@@ -1,5 +1,10 @@
 :root {
     --fontfamily-website: 'M PLUS 1', sans-serif;
+    --red: radial-gradient(circle, rgba(255,102,0,1) 0%, rgba(255,0,0,1) 100%);
+    --yellow: radial-gradient(circle, rgba(254,255,0,1) 0%, rgba(255,196,0,1) 100%);
+    --blue: radial-gradient(circle, rgba(34,148,195,1) 0%, rgba(0,18,255,1) 100%);
+    --orange: radial-gradient(circle, rgba(255,192,65,1) 0%, rgba(255,136,0,1) 100%);
+    --green: radial-gradient(circle, rgba(178,240,2,1) 0%, rgba(39,177,0,1) 100%);
 }
 
 .container {
@@ -19,10 +24,17 @@
 #resetDiv button {
     font-family: var(--fontfamily-website);
     font-weight: bold;
-    background-color: yellow;
+    background: rgb(254,255,0);
+    background: var(--yellow);
     width: 100px;
     height: 30px;
+    border: 2px solid black;
     border-radius: 15px;
+    cursor: pointer;
+}
+
+.fab {
+    width: 30px;
 }
 
 .header, .footer {
@@ -30,10 +42,11 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    width: 90vw;
     height: 20vh;
 }
 
-.header h1, .footer h3 {
+.header h1 {
     font-weight: bolder;
     text-align: center;
     line-height: 1.6;
@@ -45,31 +58,50 @@
     height: 30px;
     font-weight: bold;
     font-family: var(--fontfamily-website);
+    color: white;
+    border: none;
     border-radius: 15px;
 }
 
+.option {
+    cursor: pointer;
+}
+
 .easy {
-    background-color: lightgreen;
+    background: var(--green);
 }
 
 .medium {
-    background-color: lightyellow;
+    background: var(--orange);
 }
 
 .hard {
-    background-color: salmon;
+    background: var(--red);
 }
 
 .main {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
-    height: 60vh;
+    width: 90vw;
+    height: 50vh;
 }
 
 .footer {
-    height: 10vh;
+    width: 90vw;
+    height: 20vh;
+}
+
+.footer div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer div p {
+    font-weight: 500;
 }
 
 .tower {
@@ -87,35 +119,51 @@
     height: 10px;
     border: 1px solid black;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .discRed {
     width: 30px;
-    background-color: red;
+    background: rgb(255,102,0);
+    background: var(--red);
 }
 
 .discGreen {
     width: 40px;
-    background-color: green;
+    background: rgb(178,240,2);
+    background: var(--green);
 }
 
 .discBlue {
     width: 60px;
-    background-color: blue;
+    background: rgb(34,148,195);
+    background: var(--blue);
 }
 
 .discYellow {
     width: 80px;
-    background-color: yellow;
+    background: rgb(254,255,0);
+    background: var(--yellow);
 }
 
 .discOrange {
     width: 100px;
-    background-color: orangered;
+    background: rgb(255,192,65);
+    background: var(--orange);
 }
 
+.link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: black;
+}
 
 @media (min-width: 1024px) {
+
     .header h1, .footer h3 {
         font-size: 24px;
     }
@@ -123,6 +171,12 @@
     .header button {
         font-size: 18px;
         width: 80px;
+        height: 80px;
+        border-radius: 100%;
+    }
+
+    .header button:hover {
+        filter: brightness(0.9);
     }
 
     p, span {
@@ -134,24 +188,28 @@
         height: 250px;
     }
 
+    .disc {
+        height: 30px;
+    }
+
     .discRed{
-        width: 60px;
+        width: 70px;
     }
 
     .discGreen{
-        width: 80px;
+        width: 90px;
     }
 
     .discBlue{
-        width: 100px;
+        width: 110px;
     }
 
     .discYellow{
-        width: 120px;
+        width: 130px;
     }
 
     .discOrange{
-        width: 140px;
+        width: 150px;
     }
 
     #resetDiv button{
